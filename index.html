@@ -1,0 +1,2709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Namal ❤️ Batti | 3 Years of Us</title>
+
+
+    <!-- =====================================================
+         FONTS
+    ====================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            background: #070307;
+            color: #ffffff;
+
+            font-family: 'Poppins', sans-serif;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =====================================================
+           BACKGROUND GLOW
+        ===================================================== */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            background:
+
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(255, 55, 120, 0.15),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 85% 35%,
+                    rgba(255, 0, 100, 0.12),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 50% 90%,
+                    rgba(255, 80, 150, 0.10),
+                    transparent 35%
+                );
+
+            z-index: -2;
+        }
+
+
+        /* =====================================================
+           FLOATING HEARTS
+        ===================================================== */
+
+        .floating-hearts {
+
+            position: fixed;
+
+            inset: 0;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            z-index: 1;
+        }
+
+
+        .floating-heart {
+
+            position: absolute;
+
+            bottom: -50px;
+
+            color: #ff477e;
+
+            opacity: 0;
+
+            animation:
+                floatingHeart
+                linear
+                infinite;
+        }
+
+
+        .floating-heart:nth-child(1) {
+            left: 5%;
+            font-size: 20px;
+            animation-duration: 10s;
+        }
+
+        .floating-heart:nth-child(2) {
+            left: 18%;
+            font-size: 14px;
+            animation-duration: 13s;
+            animation-delay: 2s;
+        }
+
+        .floating-heart:nth-child(3) {
+            left: 32%;
+            font-size: 24px;
+            animation-duration: 9s;
+            animation-delay: 4s;
+        }
+
+        .floating-heart:nth-child(4) {
+            left: 48%;
+            font-size: 17px;
+            animation-duration: 12s;
+            animation-delay: 1s;
+        }
+
+        .floating-heart:nth-child(5) {
+            left: 63%;
+            font-size: 22px;
+            animation-duration: 11s;
+            animation-delay: 5s;
+        }
+
+        .floating-heart:nth-child(6) {
+            left: 78%;
+            font-size: 15px;
+            animation-duration: 14s;
+            animation-delay: 3s;
+        }
+
+        .floating-heart:nth-child(7) {
+            left: 92%;
+            font-size: 25px;
+            animation-duration: 10s;
+            animation-delay: 6s;
+        }
+
+
+        @keyframes floatingHeart {
+
+            0% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg)
+                    scale(0.5);
+
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.8;
+            }
+
+            80% {
+                opacity: 0.4;
+            }
+
+            100% {
+
+                transform:
+                    translateY(-110vh)
+                    rotate(40deg)
+                    scale(1.2);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            position: relative;
+
+            padding: 30px;
+        }
+
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 5;
+
+            animation:
+                heroAppear
+                1.5s
+                ease;
+        }
+
+
+        @keyframes heroAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(40px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        .hero-small {
+
+            color: #ff709c;
+
+            font-size: 12px;
+
+            letter-spacing: 6px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 30px;
+        }
+
+
+        .hero-title {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size:
+                clamp(70px, 14vw, 160px);
+
+            line-height: 0.8;
+
+            font-weight: 600;
+        }
+
+
+        .hero-title .heart {
+
+            color: #ff477e;
+
+            display: inline-block;
+
+            animation:
+                heartbeat
+                1.5s
+                infinite;
+        }
+
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.18);
+            }
+        }
+
+
+        .hero-subtitle {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size:
+                clamp(28px, 5vw, 55px);
+
+            font-style: italic;
+
+            color: #ffd4e2;
+
+            margin-top: 35px;
+        }
+
+
+        .hero-date {
+
+            margin-top: 30px;
+
+            color: #888;
+
+            font-size: 12px;
+
+            letter-spacing: 4px;
+        }
+
+
+        .scroll-indicator {
+
+            position: absolute;
+
+            bottom: 30px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            color: #777;
+
+            font-size: 10px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+        }
+
+
+        .scroll-indicator span {
+
+            display: block;
+
+            margin-top: 8px;
+
+            font-size: 22px;
+
+            color: #ff477e;
+
+            animation:
+                bounce
+                1.5s
+                infinite;
+        }
+
+
+        @keyframes bounce {
+
+            50% {
+
+                transform:
+                    translateY(8px);
+            }
+        }
+
+
+        /* =====================================================
+           GENERAL SECTIONS
+        ===================================================== */
+
+        section {
+
+            position: relative;
+
+            z-index: 3;
+
+            padding:
+                120px 20px;
+        }
+
+
+        .container {
+
+            width: 100%;
+
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+
+        .label {
+
+            text-align: center;
+
+            color: #ff5c8b;
+
+            font-size: 11px;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+
+        .section-title {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            text-align: center;
+
+            font-size:
+                clamp(45px, 8vw, 80px);
+
+            line-height: 0.9;
+
+            margin-bottom: 60px;
+        }
+
+
+        /* =====================================================
+           LIVE COUNTER
+        ===================================================== */
+
+        .counter-section {
+
+            background:
+                rgba(255,255,255,0.025);
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.06);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.06);
+        }
+
+
+        .counter {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(6, 1fr);
+
+            gap: 12px;
+        }
+
+
+        .counter-card {
+
+            text-align: center;
+
+            padding:
+                30px 10px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(255,71,126,0.035);
+
+            border:
+                1px solid
+                rgba(255,71,126,0.15);
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+
+        .counter-card:hover {
+
+            transform:
+                translateY(-6px);
+
+            border-color:
+                rgba(255,71,126,0.5);
+        }
+
+
+        .counter-number {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size:
+                clamp(38px, 5vw, 62px);
+
+            color: #ff477e;
+
+            line-height: 1;
+        }
+
+
+        .counter-name {
+
+            color: #888;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-top: 10px;
+        }
+
+
+        /* =====================================================
+           LOVE LETTER
+        ===================================================== */
+
+        .letter {
+
+            max-width: 800px;
+
+            margin: auto;
+
+            padding:
+                55px 45px;
+
+            border:
+                1px solid
+                rgba(255,71,126,0.15);
+
+            border-radius: 25px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            position: relative;
+        }
+
+
+        .letter::before {
+
+            content: "“";
+
+            position: absolute;
+
+            top: -40px;
+
+            left: 25px;
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size: 130px;
+
+            color: #ff477e;
+
+            opacity: 0.35;
+        }
+
+
+        .letter p {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size:
+                clamp(20px, 3vw, 27px);
+
+            line-height: 1.8;
+
+            color: #e6dfe2;
+
+            text-align: center;
+        }
+
+
+        .letter strong {
+
+            color: #ff709c;
+
+            font-weight: 600;
+        }
+
+
+        .signature {
+
+            text-align: center;
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size: 30px;
+
+            color: #ff709c;
+
+            font-style: italic;
+
+            margin-top: 35px;
+        }
+
+
+        /* =====================================================
+           PHOTO GALLERY
+        ===================================================== */
+
+        .gallery-intro {
+
+            max-width: 600px;
+
+            margin:
+                -30px auto 60px;
+
+            text-align: center;
+
+            color: #888;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+
+
+        .gallery {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(12, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .photo {
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 18px;
+
+            min-height: 330px;
+
+            background: #15070d;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            opacity: 0;
+
+            transform:
+                translateY(35px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+
+        .photo.visible {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        .photo:nth-child(1) {
+            grid-column: span 7;
+        }
+
+        .photo:nth-child(2) {
+            grid-column: span 5;
+        }
+
+        .photo:nth-child(3) {
+            grid-column: span 5;
+        }
+
+        .photo:nth-child(4) {
+            grid-column: span 7;
+        }
+
+        .photo:nth-child(5) {
+            grid-column: span 4;
+        }
+
+        .photo:nth-child(6) {
+            grid-column: span 4;
+        }
+
+        .photo:nth-child(7) {
+            grid-column: span 4;
+        }
+
+        .photo:nth-child(8) {
+            grid-column: span 7;
+        }
+
+        .photo:nth-child(9) {
+            grid-column: span 5;
+        }
+
+        .photo:nth-child(10) {
+            grid-column: span 5;
+        }
+
+        .photo:nth-child(11) {
+            grid-column: span 7;
+        }
+
+        .photo:nth-child(12) {
+            grid-column: span 4;
+        }
+
+        .photo:nth-child(13) {
+            grid-column: span 4;
+        }
+
+        .photo:nth-child(14) {
+            grid-column: span 4;
+        }
+
+        .photo:nth-child(15) {
+            grid-column: span 7;
+        }
+
+        .photo:nth-child(16) {
+            grid-column: span 5;
+        }
+
+        .photo:nth-child(17) {
+            grid-column: span 12;
+        }
+
+
+        .photo img {
+
+            width: 100%;
+
+            height: 100%;
+
+            min-height: 330px;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition:
+                transform 0.8s ease;
+        }
+
+
+        .photo:hover img {
+
+            transform:
+                scale(1.07);
+        }
+
+
+        .photo-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            padding: 20px;
+
+            background:
+                linear-gradient(
+                    transparent 45%,
+                    rgba(0,0,0,0.75)
+                );
+
+            opacity: 0;
+
+            transition:
+                opacity 0.4s ease;
+        }
+
+
+        .photo:hover .photo-overlay {
+
+            opacity: 1;
+        }
+
+
+        .photo-number {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size: 28px;
+
+            color: white;
+        }
+
+
+        /* =====================================================
+           REASONS SECTION
+        ===================================================== */
+
+        .reasons {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .reason {
+
+            padding:
+                40px 25px;
+
+            text-align: center;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.07);
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+
+        .reason:hover {
+
+            transform:
+                translateY(-8px);
+
+            border-color:
+                rgba(255,71,126,0.4);
+        }
+
+
+        /* =====================================================
+           NEW CSS ICONS
+        ===================================================== */
+
+        .reason-icon {
+
+            width: 75px;
+
+            height: 75px;
+
+            margin:
+                0 auto 22px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,71,126,0.08);
+
+            border:
+                1px solid
+                rgba(255,71,126,0.25);
+
+            position: relative;
+
+            transition:
+                transform 0.4s ease,
+                background 0.4s ease,
+                box-shadow 0.4s ease;
+        }
+
+
+        .reason:hover .reason-icon {
+
+            transform:
+                scale(1.1);
+
+            background:
+                rgba(255,71,126,0.15);
+
+            box-shadow:
+                0 0 30px
+                rgba(255,71,126,0.25);
+        }
+
+
+        /* =====================================================
+           HEART ICON
+        ===================================================== */
+
+        .icon-heart {
+
+            font-size: 32px;
+
+            color: #ff477e;
+
+            animation:
+                reasonHeart
+                1.5s
+                ease-in-out
+                infinite;
+        }
+
+
+        @keyframes reasonHeart {
+
+            0%,
+            100% {
+
+                transform:
+                    scale(1);
+            }
+
+            50% {
+
+                transform:
+                    scale(1.15);
+            }
+        }
+
+
+        /* =====================================================
+           SPARKLE ICON
+        ===================================================== */
+
+        .icon-sparkle {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size: 48px;
+
+            color: #ff709c;
+
+            animation:
+                sparkleAnimation
+                3s
+                linear
+                infinite;
+        }
+
+
+        @keyframes sparkleAnimation {
+
+            0% {
+
+                transform:
+                    rotate(0deg)
+                    scale(1);
+            }
+
+            50% {
+
+                transform:
+                    rotate(15deg)
+                    scale(1.1);
+            }
+
+            100% {
+
+                transform:
+                    rotate(0deg)
+                    scale(1);
+            }
+        }
+
+
+        /* =====================================================
+           INFINITY ICON
+        ===================================================== */
+
+        .icon-infinity {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size: 55px;
+
+            font-weight: 500;
+
+            color: #ff477e;
+
+            line-height: 1;
+
+            animation:
+                infinityAnimation
+                2s
+                ease-in-out
+                infinite;
+        }
+
+
+        @keyframes infinityAnimation {
+
+            0%,
+            100% {
+
+                transform:
+                    scale(1);
+            }
+
+            50% {
+
+                transform:
+                    scale(1.08);
+            }
+        }
+
+
+        .reason h3 {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size: 30px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .reason p {
+
+            color: #888;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           FINAL SECTION
+        ===================================================== */
+
+        .final {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+        }
+
+
+        .final-title {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size:
+                clamp(60px, 12vw, 130px);
+
+            line-height: 0.82;
+
+            margin-bottom: 35px;
+        }
+
+
+        .final-title span {
+
+            color: #ff477e;
+        }
+
+
+        .final-text {
+
+            max-width: 600px;
+
+            margin: auto;
+
+            color: #999;
+
+            font-size: 14px;
+
+            line-height: 2;
+        }
+
+
+        .surprise-button {
+
+            margin-top: 40px;
+
+            padding:
+                16px 38px;
+
+            border:
+                1px solid #ff477e;
+
+            background: transparent;
+
+            color: #ff709c;
+
+            border-radius: 50px;
+
+            cursor: pointer;
+
+            font-family:
+                'Poppins',
+                sans-serif;
+
+            font-size: 12px;
+
+            letter-spacing: 1px;
+
+            transition:
+                0.3s;
+        }
+
+
+        .surprise-button:hover {
+
+            background:
+                #ff477e;
+
+            color: white;
+
+            box-shadow:
+                0 0 35px
+                rgba(255,71,126,0.4);
+        }
+
+
+        /* =====================================================
+           POPUP
+        ===================================================== */
+
+        .popup {
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(3,1,3,0.95);
+
+            backdrop-filter:
+                blur(12px);
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            z-index: 100;
+
+            padding: 20px;
+        }
+
+
+        .popup.active {
+
+            display: flex;
+        }
+
+
+        .popup-box {
+
+            width: 100%;
+
+            max-width: 650px;
+
+            padding:
+                60px 35px;
+
+            text-align: center;
+
+            background:
+                #10070c;
+
+            border:
+                1px solid
+                rgba(255,71,126,0.3);
+
+            border-radius: 25px;
+
+            animation:
+                popupIn
+                0.6s
+                ease;
+        }
+
+
+        @keyframes popupIn {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    scale(0.8);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    scale(1);
+            }
+        }
+
+
+        .popup-heart {
+
+            font-size: 70px;
+
+            color: #ff477e;
+
+            animation:
+                heartbeat
+                1.3s
+                infinite;
+        }
+
+
+        .popup-box h2 {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size: 60px;
+
+            color: #ff477e;
+
+            margin-top: 15px;
+        }
+
+
+        .popup-box p {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size: 24px;
+
+            line-height: 1.7;
+
+            color: #ddd;
+
+            margin-top: 20px;
+        }
+
+
+        .popup-box strong {
+
+            color: #ff709c;
+        }
+
+
+        .close-button {
+
+            margin-top: 30px;
+
+            padding:
+                12px 28px;
+
+            border: none;
+
+            background:
+                #ff477e;
+
+            color: white;
+
+            border-radius: 50px;
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            text-align: center;
+
+            padding:
+                30px 20px;
+
+            color: #444;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .counter {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            section {
+
+                padding:
+                    90px 15px;
+            }
+
+
+            .hero-title {
+
+                font-size: 75px;
+            }
+
+
+            .counter {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 10px;
+            }
+
+
+            .counter-card {
+
+                padding:
+                    25px 10px;
+            }
+
+
+            .letter {
+
+                padding:
+                    45px 22px;
+            }
+
+
+            .gallery {
+
+                display: grid;
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 15px;
+            }
+
+
+            .photo,
+            .photo:nth-child(n) {
+
+                grid-column:
+                    span 1;
+
+                min-height: 400px;
+            }
+
+
+            .photo img {
+
+                min-height: 400px;
+            }
+
+
+            .photo-overlay {
+
+                opacity: 1;
+            }
+
+
+            .reasons {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .final-title {
+
+                font-size: 75px;
+            }
+
+        }
+
+
+        @media (max-width: 400px) {
+
+            .hero-title {
+
+                font-size: 62px;
+            }
+
+
+            .counter-number {
+
+                font-size: 38px;
+            }
+
+
+            .counter-name {
+
+                font-size: 8px;
+
+                letter-spacing: 1px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+    <!-- =====================================================
+         FLOATING HEARTS
+    ====================================================== -->
+
+    <div class="floating-hearts">
+
+        <div class="floating-heart">♥</div>
+        <div class="floating-heart">♥</div>
+        <div class="floating-heart">♥</div>
+        <div class="floating-heart">♥</div>
+        <div class="floating-heart">♥</div>
+        <div class="floating-heart">♥</div>
+        <div class="floating-heart">♥</div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-small">
+                Since 17 August 2023
+            </div>
+
+
+            <h1 class="hero-title">
+
+                Namal
+
+                <span class="heart">
+                    ♥
+                </span>
+
+                Batti
+
+            </h1>
+
+
+            <div class="hero-subtitle">
+                Three Years of Us
+            </div>
+
+
+            <div class="hero-date">
+
+                17.08.2023
+
+                &nbsp; — &nbsp;
+
+                17.08.2026
+
+            </div>
+
+        </div>
+
+
+        <div class="scroll-indicator">
+
+            Our Story
+
+            <span>↓</span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         LIVE RELATIONSHIP COUNTER
+    ====================================================== -->
+
+    <section class="counter-section">
+
+        <div class="container">
+
+            <div class="label">
+                Every second matters
+            </div>
+
+
+            <h2 class="section-title">
+                Time With You
+            </h2>
+
+
+            <div class="counter">
+
+
+                <div class="counter-card">
+
+                    <div
+                        class="counter-number"
+                        id="years">
+                        0
+                    </div>
+
+                    <div class="counter-name">
+                        Years
+                    </div>
+
+                </div>
+
+
+                <div class="counter-card">
+
+                    <div
+                        class="counter-number"
+                        id="months">
+                        0
+                    </div>
+
+                    <div class="counter-name">
+                        Months
+                    </div>
+
+                </div>
+
+
+                <div class="counter-card">
+
+                    <div
+                        class="counter-number"
+                        id="days">
+                        0
+                    </div>
+
+                    <div class="counter-name">
+                        Days
+                    </div>
+
+                </div>
+
+
+                <div class="counter-card">
+
+                    <div
+                        class="counter-number"
+                        id="hours">
+                        0
+                    </div>
+
+                    <div class="counter-name">
+                        Hours
+                    </div>
+
+                </div>
+
+
+                <div class="counter-card">
+
+                    <div
+                        class="counter-number"
+                        id="minutes">
+                        0
+                    </div>
+
+                    <div class="counter-name">
+                        Minutes
+                    </div>
+
+                </div>
+
+
+                <div class="counter-card">
+
+                    <div
+                        class="counter-number"
+                        id="seconds">
+                        0
+                    </div>
+
+                    <div class="counter-name">
+                        Seconds
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         LOVE LETTER
+    ====================================================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="label">
+                For My Batti
+            </div>
+
+
+            <h2 class="section-title">
+                Dear Batti...
+            </h2>
+
+
+            <div class="letter">
+
+                <p>
+
+                    Three years ago,
+                    on <strong>17 August 2023</strong>,
+                    our story began.
+
+                    <br><br>
+
+                    I don't know if we understood
+                    that day how many memories,
+                    laughs, little arguments,
+                    adventures and beautiful moments
+                    were waiting for us.
+
+                    <br><br>
+
+                    But here we are.
+
+                    <br><br>
+
+                    Three years later,
+                    and you're still the person
+                    I want beside me.
+
+                    <br><br>
+
+                    You've become such a beautiful
+                    part of my life that sometimes
+                    I can't imagine my days without you.
+
+                    <br><br>
+
+                    Thank you for every smile,
+                    every conversation,
+                    every memory,
+                    every crazy moment
+                    and every little thing
+                    that makes you...
+
+                    <strong>
+                        YOU.
+                    </strong>
+
+                    <br><br>
+
+                    And if life gave me the chance
+                    to go back to 17 August 2023...
+
+                    <br><br>
+
+                    I would still choose you.
+
+                </p>
+
+
+                <div class="signature">
+
+                    Forever yours,
+
+                    <br>
+
+                    Namal ♥️
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PHOTO GALLERY
+    ====================================================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="label">
+                17 Memories
+            </div>
+
+
+            <h2 class="section-title">
+                Our Little World
+            </h2>
+
+
+            <p class="gallery-intro">
+
+                Seventeen pictures.
+
+                Hundreds of memories.
+
+                Thousands of little moments.
+
+                And one story that means
+                everything to me.
+
+            </p>
+
+
+            <div class="gallery">
+
+
+                <div class="photo">
+
+                    <img
+                        src="images/1.JPG"
+                        alt="Memory 1">
+
+                    <div class="photo-overlay">
+
+                        <div class="photo-number">
+                            Memory 01 ♥
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="photo">
+
+                    <img
+                        src="images/2.JPG"
+                        alt="Memory 2">
+
+                    <div class="photo-overlay">
+
+                        <div class="photo-number">
+                            Memory 02 ♥
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="photo">
+
+                    <img
+                        src="images/3.JPG"
+                        alt="Memory 3">
+
+                    <div class="photo-overlay">
+
+                        <div class="photo-number">
+                            Memory 03 ♥
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="photo">
+
+                    <img
+                        src="images/4.JPG"
+                        alt="Memory 4">
+
+                    <div class="photo-overlay">
+
+                        <div class="photo-number">
+                            Memory 04 ♥
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="photo">
+
+                    <img
+                        src="images/5.jpg"
+                        alt="Memory 5">
+
+                    <div class="photo-overlay">
+
+                        <div class="photo-number">
+                            Memory 05 ♥
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="photo">
+
+                    <img
+                        src="images/6.JPG"
+                        alt="Memory 6">
+
+                    <div class="photo-overlay">
+
+                        <div class="photo-number">
+                            Memory 06 ♥
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="photo">
+
+                    <img
+                        src="images/7.JPG"
+                        alt="Memory 7">
+
+                    <div class="photo-overlay">
+
+                        <div class="photo-number">
+                            Memory 07 ♥
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="photo">
+
+                    <img
+                        src="images/8.JPG"
+                        alt="Memory 8">
+
+                    <div class="photo-overlay">
+
+                        <div class="photo-number">
+                            Memory 08 ♥
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="photo">
+
+                    <img
+                        src="images/9.JPG"
+                        alt="Memory 9">
+
+                    <div class="photo-overlay">
+
+                        <div class="photo-number">
+                            Memory 09 ♥
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="photo">
+
+                    <img
+                        src="images/10.JPG"
+                        alt="Memory 10">
+
+                    <div class="photo-overlay">
+
+                        <div class="photo-number">
+                            Memory 10 ♥
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="photo">
+
+                    <img
+                        src="images/11.jpg"
+                        alt="Memory 11">
+
+                    <div class="photo-overlay">
+
+                        <div class="photo-number">
+                            Memory 11 ♥
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="photo">
+
+                    <img
+                        src="images/12.jpeg"
+                        alt="Memory 12">
+
+                    <div class="photo-overlay">
+
+                        <div class="photo-number">
+                            Memory 12 ♥
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="photo">
+
+                    <img
+                        src="images/13.jpeg"
+                        alt="Memory 13">
+
+                    <div class="photo-overlay">
+
+                        <div class="photo-number">
+                            Memory 13 ♥
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="photo">
+
+                    <img
+                        src="images/14.jpeg"
+                        alt="Memory 14">
+
+                    <div class="photo-overlay">
+
+                        <div class="photo-number">
+                            Memory 14 ♥
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="photo">
+
+                    <img
+                        src="images/15.jpeg"
+                        alt="Memory 15">
+
+                    <div class="photo-overlay">
+
+                        <div class="photo-number">
+                            Memory 15 ♥
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="photo">
+
+                    <img
+                        src="images/16.jpg"
+                        alt="Memory 16">
+
+                    <div class="photo-overlay">
+
+                        <div class="photo-number">
+                            Memory 16 ♥
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="photo">
+
+                    <img
+                        src="images/17.JPG"
+                        alt="Memory 17">
+
+                    <div class="photo-overlay">
+
+                        <div class="photo-number">
+                            Our Story ♥
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         REASONS I LOVE YOU
+    ====================================================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="label">
+                There are many...
+            </div>
+
+
+            <h2 class="section-title">
+                Why I Love You
+            </h2>
+
+
+            <div class="reasons">
+
+
+                <!-- HEART -->
+
+                <div class="reason">
+
+                    <div class="reason-icon">
+
+                        <div class="icon-heart">
+                            ♥
+                        </div>
+
+                    </div>
+
+
+                    <h3>
+                        Your Smile
+                    </h3>
+
+
+                    <p>
+
+                        Somehow your smile can
+                        make an ordinary day feel
+                        like something special.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- SPARKLE -->
+
+                <div class="reason">
+
+                    <div class="reason-icon">
+
+                        <div class="icon-sparkle">
+                            ✦
+                        </div>
+
+                    </div>
+
+
+                    <h3>
+                        Your Heart
+                    </h3>
+
+
+                    <p>
+
+                        The way you care,
+                        love and understand
+                        means more than words
+                        can explain.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- INFINITY -->
+
+                <div class="reason">
+
+                    <div class="reason-icon">
+
+                        <div class="icon-infinity">
+                            ∞
+                        </div>
+
+                    </div>
+
+
+                    <h3>
+                        Just You
+                    </h3>
+
+
+                    <p>
+
+                        I don't need someone perfect.
+
+                        I just need you,
+                        exactly as you are.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FINAL SECTION
+    ====================================================== -->
+
+    <section class="final">
+
+        <div>
+
+            <div class="label">
+                17 August 2026
+            </div>
+
+
+            <h2 class="final-title">
+
+                Happy 3rd
+
+                <br>
+
+                <span>Anniversary</span>
+
+            </h2>
+
+
+            <p class="final-text">
+
+                Three years down.
+
+                <br>
+
+                And hopefully,
+                a lifetime to go.
+
+                <br><br>
+
+                Batti, thank you for being
+                part of my life.
+
+                Thank you for every laugh,
+                every memory,
+                every little argument,
+                every adventure,
+                and every moment we've shared.
+
+                <br><br>
+
+                I love you.
+
+                ♥️
+
+            </p>
+
+
+            <button
+                class="surprise-button"
+                onclick="openPopup()">
+
+                ONE MORE THING...
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SURPRISE POPUP
+    ====================================================== -->
+
+    <div
+        class="popup"
+        id="popup">
+
+        <div class="popup-box">
+
+
+            <div class="popup-heart">
+                ♥
+            </div>
+
+
+            <h2>
+                Batti...
+            </h2>
+
+
+            <p>
+
+                If I could choose one person
+                to spend all my tomorrows with...
+
+                <br><br>
+
+                I'd choose you.
+
+                <br><br>
+
+                Again.
+
+                <br>
+
+                And again.
+
+                <br>
+
+                And again.
+
+                <br><br>
+
+                <strong>
+                    Happy 3 Years,
+                    My Love.
+                    ♥
+                </strong>
+
+            </p>
+
+
+            <button
+                class="close-button"
+                onclick="closePopup()">
+
+                Close
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        NAMAL ♥ BATTI
+
+        &nbsp; • &nbsp;
+
+        17.08.2023
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           RELATIONSHIP START DATE
+        ====================================================== */
+
+        const startDate =
+            new Date(
+                "2023-08-17T00:00:00"
+            );
+
+
+
+        /* =====================================================
+           LIVE RELATIONSHIP COUNTER
+        ====================================================== */
+
+        function updateCounter() {
+
+            const now = new Date();
+
+
+            let years =
+                now.getFullYear()
+                -
+                startDate.getFullYear();
+
+
+            let anniversary =
+                new Date(
+                    now.getFullYear(),
+                    7,
+                    17,
+                    0,
+                    0,
+                    0
+                );
+
+
+            if (now < anniversary) {
+
+                years--;
+
+            }
+
+
+            /*
+             * Date after adding completed years
+             */
+
+            let afterYears =
+                new Date(startDate);
+
+            afterYears.setFullYear(
+                startDate.getFullYear()
+                + years
+            );
+
+
+            /*
+             * Calculate completed months
+             */
+
+            let months =
+                now.getMonth()
+                -
+                afterYears.getMonth();
+
+
+            if (
+                now.getDate()
+                <
+                afterYears.getDate()
+            ) {
+
+                months--;
+
+            }
+
+
+            if (months < 0) {
+
+                months += 12;
+
+            }
+
+
+            /*
+             * Date after adding completed months
+             */
+
+            let afterMonths =
+                new Date(afterYears);
+
+            afterMonths.setMonth(
+                afterMonths.getMonth()
+                + months
+            );
+
+
+            /*
+             * Remaining difference
+             */
+
+            let difference =
+                now - afterMonths;
+
+
+            let days =
+                Math.floor(
+                    difference
+                    /
+                    (1000 * 60 * 60 * 24)
+                );
+
+
+            let hours =
+                Math.floor(
+                    (
+                        difference
+                        /
+                        (1000 * 60 * 60)
+                    )
+                    % 24
+                );
+
+
+            let minutes =
+                Math.floor(
+                    (
+                        difference
+                        /
+                        (1000 * 60)
+                    )
+                    % 60
+                );
+
+
+            let seconds =
+                Math.floor(
+                    (
+                        difference
+                        /
+                        1000
+                    )
+                    % 60
+                );
+
+
+            /*
+             * Update screen
+             */
+
+            document
+                .getElementById("years")
+                .textContent =
+                years;
+
+
+            document
+                .getElementById("months")
+                .textContent =
+                months;
+
+
+            document
+                .getElementById("days")
+                .textContent =
+                days;
+
+
+            document
+                .getElementById("hours")
+                .textContent =
+                hours;
+
+
+            document
+                .getElementById("minutes")
+                .textContent =
+                minutes;
+
+
+            document
+                .getElementById("seconds")
+                .textContent =
+                seconds;
+
+        }
+
+
+        /*
+         * Start immediately
+         */
+
+        updateCounter();
+
+
+        /*
+         * Update every second
+         */
+
+        setInterval(
+            updateCounter,
+            1000
+        );
+
+
+
+        /* =====================================================
+           PHOTO SCROLL ANIMATION
+        ====================================================== */
+
+        const photos =
+            document.querySelectorAll(
+                ".photo"
+            );
+
+
+        const photoObserver =
+            new IntersectionObserver(
+                function(entries) {
+
+                    entries.forEach(
+                        function(entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target
+                                    .classList
+                                    .add("visible");
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        photos.forEach(
+            function(photo) {
+
+                photoObserver.observe(
+                    photo
+                );
+
+            }
+        );
+
+
+
+        /* =====================================================
+           SURPRISE POPUP
+        ====================================================== */
+
+        function openPopup() {
+
+            document
+                .getElementById("popup")
+                .classList
+                .add("active");
+
+        }
+
+
+        function closePopup() {
+
+            document
+                .getElementById("popup")
+                .classList
+                .remove("active");
+
+        }
+
+
+
+        /* =====================================================
+           CLOSE POPUP BY CLICKING OUTSIDE
+        ====================================================== */
+
+        document
+            .getElementById("popup")
+            .addEventListener(
+                "click",
+                function(event) {
+
+                    if (
+                        event.target === this
+                    ) {
+
+                        closePopup();
+
+                    }
+
+                }
+            );
+
+
+
+        /* =====================================================
+           CLOSE POPUP WITH ESCAPE
+        ====================================================== */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    closePopup();
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
