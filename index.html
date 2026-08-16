@@ -1474,6 +1474,165 @@
 
         }
 
+        /* =====================================================
+   FLOATING MUSIC PLAYER
+===================================================== */
+
+.music-player {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    z-index: 50;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* Music button */
+
+.music-button {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(255, 71, 126, 0.5);
+
+    background:
+        rgba(20, 5, 12, 0.9);
+
+    color: #ff709c;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.music-button:hover {
+
+    transform: scale(1.08);
+
+    background:
+        rgba(255, 71, 126, 0.15);
+
+    box-shadow:
+        0 0 25px
+        rgba(255, 71, 126, 0.35);
+}
+
+
+/* Playing animation */
+
+.music-button.playing {
+
+    animation:
+        musicPulse 1.5s
+        ease-in-out
+        infinite;
+
+    background:
+        rgba(255, 71, 126, 0.15);
+
+    box-shadow:
+        0 0 30px
+        rgba(255, 71, 126, 0.35);
+}
+
+
+@keyframes musicPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+
+/* Music text */
+
+.music-info {
+
+    padding:
+        8px 15px;
+
+    border-radius:
+        20px;
+
+    background:
+        rgba(15, 5, 10, 0.9);
+
+    border:
+        1px solid
+        rgba(255, 71, 126, 0.15);
+
+    backdrop-filter:
+        blur(10px);
+
+    color: #aaa;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+
+    transition:
+        opacity 0.3s ease;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .music-player {
+
+        right: 15px;
+
+        bottom: 15px;
+    }
+
+
+    .music-button {
+
+        width: 50px;
+
+        height: 50px;
+
+        font-size: 22px;
+    }
+
+
+    .music-info {
+
+        display: none;
+    }
+
+}
+
     </style>
 
 </head>
@@ -1481,6 +1640,23 @@
 
 
 <body>
+
+<!-- MUSIC PLAYER -->
+<div class="music-player" id="musicPlayer">
+
+    <button class="music-button" id="musicButton" onclick="toggleMusic()">
+        <span id="musicIcon">♫</span>
+    </button>
+
+    <div class="music-info" id="musicInfo">
+        <span id="musicStatus">Play our music</span>
+    </div>
+
+</div>
+
+<audio id="backgroundMusic" loop>
+    <source src="music/m01.mp3" type="audio/mpeg">
+</audio>
 
 
     <!-- =====================================================
@@ -1931,23 +2107,6 @@
 
                         <div class="photo-number">
                             Memory 08 ♥
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="photo">
-
-                    <img
-                        src="images/9.JPG"
-                        alt="Memory 9">
-
-                    <div class="photo-overlay">
-
-                        <div class="photo-number">
-                            Memory 09 ♥
                         </div>
 
                     </div>
@@ -2664,6 +2823,99 @@
 
             }
         );
+
+
+        /* =====================================================
+   BACKGROUND MUSIC
+===================================================== */
+
+const backgroundMusic =
+    document.getElementById("backgroundMusic");
+
+const musicButton =
+    document.getElementById("musicButton");
+
+const musicIcon =
+    document.getElementById("musicIcon");
+
+const musicStatus =
+    document.getElementById("musicStatus");
+
+
+let musicPlaying = false;
+
+
+/* Toggle music */
+
+function toggleMusic() {
+
+    if (!musicPlaying) {
+
+        backgroundMusic.volume = 0;
+
+        backgroundMusic.play()
+            .then(() => {
+
+                musicPlaying = true;
+
+                musicButton.classList.add("playing");
+
+                musicIcon.textContent = "❚❚";
+
+                musicStatus.textContent =
+                    "Playing our music ♥";
+
+
+                /* Smooth volume fade */
+
+                let volume = 0;
+
+                const fadeIn =
+                    setInterval(() => {
+
+                        if (volume < 0.7) {
+
+                            volume += 0.05;
+
+                            backgroundMusic.volume =
+                                Math.min(volume, 0.7);
+
+                        } else {
+
+                            clearInterval(fadeIn);
+
+                        }
+
+                    }, 100);
+
+            })
+            .catch(error => {
+
+                console.log(
+                    "Music could not start:",
+                    error
+                );
+
+            });
+
+    }
+
+    else {
+
+        backgroundMusic.pause();
+
+        musicPlaying = false;
+
+        musicButton.classList.remove("playing");
+
+        musicIcon.textContent = "♫";
+
+        musicStatus.textContent =
+            "Play our music";
+
+    }
+
+}
 
     </script>
 
